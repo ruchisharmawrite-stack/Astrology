@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruchi Sharma | Astrology Content Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', serif; background: #faf9f7; color: #1a1a2e; }
+
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d5e 50%, #1a1a2e 100%);
+    color: #fff; padding: 48px 40px 40px; text-align: center;
+  }
+  header::before {
+    content: '✦ ☽ ✦ ☆ ✦ ☽ ✦';
+    display: block; font-size: 12px; letter-spacing: 6px;
+    color: #c9a84c; opacity: 0.7; margin-bottom: 16px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 3px; font-weight: 400; margin-bottom: 8px; }
+  header .tagline {
+    font-size: 0.95rem; color: #c9a84c; letter-spacing: 2px;
+    font-family: 'Arial', sans-serif; margin-bottom: 18px;
+  }
+  .contact-bar {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 18px;
+    font-family: 'Arial', sans-serif; font-size: 0.82rem; color: #ccc;
+  }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: #c9a84c; color: #1a1a2e;
+    text-align: center; padding: 16px 24px;
+    font-family: 'Arial', sans-serif; font-size: 0.9rem; font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .cta-banner a { color: #1a1a2e; text-decoration: underline; }
+
+  nav {
+    background: #fff; border-bottom: 2px solid #c9a84c;
+    display: flex; justify-content: center; flex-wrap: wrap;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  nav a {
+    text-decoration: none; color: #1a1a2e;
+    padding: 13px 20px; font-family: 'Arial', sans-serif;
+    font-size: 0.8rem; letter-spacing: 1px; font-weight: 600;
+    text-transform: uppercase; transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+  }
+  nav a:hover { color: #c9a84c; border-bottom-color: #c9a84c; }
+
+  main { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .section { margin-bottom: 56px; }
+  .section-label {
+    font-family: 'Arial', sans-serif; font-size: 0.7rem;
+    letter-spacing: 4px; color: #c9a84c; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: 1.55rem; font-weight: 400; color: #1a1a2e;
+    padding-bottom: 10px; border-bottom: 1px solid #ddd; margin-bottom: 24px;
+  }
+
+  /* CLIENT STRIP */
+  .client-strip {
+    background: #1a1a2e; color: #fff;
+    padding: 20px 24px; margin-bottom: 20px; border-radius: 2px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .client-strip .client-name { font-size: 1rem; font-weight: 400; }
+  .client-strip .client-detail { font-family: 'Arial', sans-serif; font-size: 0.78rem; color: #c9a84c; margin-top: 3px; }
+  .client-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+  .client-pill {
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4);
+    color: #c9a84c; font-family: 'Arial', sans-serif;
+    font-size: 0.72rem; padding: 3px 11px; border-radius: 12px;
+  }
+
+  /* SAMPLE CARDS */
+  .card {
+    background: #fff; border: 1px solid #e8e4dc;
+    border-radius: 2px; margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .card-header {
+    background: #1a1a2e; color: #fff;
+    padding: 12px 18px; display: flex; align-items: center; gap: 10px;
+  }
+  .card-header .icon { font-size: 1.1rem; }
+  .card-header .title { font-family: 'Arial', sans-serif; font-size: 0.84rem; font-weight: 600; }
+  .card-header .sub { font-size: 0.7rem; color: #c9a84c; margin-top: 2px; font-family: 'Arial', sans-serif; }
+  .card-body { padding: 18px 20px; }
+
+  .badge {
+    display: inline-block; background: #f5f0e8; border: 1px solid #c9a84c;
+    color: #8a6a1c; font-family: 'Arial', sans-serif;
+    font-size: 0.68rem; padding: 2px 10px; border-radius: 12px;
+    letter-spacing: 0.5px; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .content-text {
+    font-family: 'Arial', sans-serif; font-size: 0.88rem; line-height: 1.85;
+    color: #333; background: #faf9f7; padding: 14px 16px;
+    border-left: 3px solid #c9a84c; border-radius: 0 2px 2px 0;
+  }
+
+  /* TWO COLUMN */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* PANCHANG */
+  .panchang-entry {
+    background: #fff; border: 1px solid #e8e4dc;
+    border-left: 3px solid #c9a84c;
+    padding: 14px 18px; margin-bottom: 12px;
+  }
+  .panchang-date {
+    font-family: 'Arial', sans-serif; font-size: 0.72rem;
+    color: #c9a84c; font-weight: 700; letter-spacing: 1px;
+    margin-bottom: 6px; text-transform: uppercase;
+  }
+
+  /* GEMSTONE */
+  .gem-card { background: #fff; border: 1px solid #e8e4dc; padding: 16px; }
+  .gem-name { font-weight: 600; color: #1a1a2e; font-size: 0.9rem; margin-bottom: 6px; }
+  .gem-name span { color: #c9a84c; font-style: italic; }
+
+  /* NUMEROLOGY */
+  .num-card { background: #fff; border: 1px solid #e8e4dc; padding: 18px; }
+  .num-header {
+    font-family: 'Arial', sans-serif; font-size: 0.73rem; font-weight: 700;
+    color: #c9a84c; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;
+  }
+
+  /* FESTIVAL */
+  .festival-entry {
+    background: #fff; border: 1px solid #e8e4dc; padding: 18px;
+    margin-bottom: 14px; border-top: 3px solid #c9a84c;
+  }
+  .festival-name { font-size: 0.95rem; font-weight: 600; color: #1a1a2e; margin-bottom: 8px; }
+
+  /* BOTTOM CTA */
+  .bottom-cta {
+    background: #1a1a2e; color: #fff;
+    text-align: center; padding: 36px 24px; margin-top: 20px; border-radius: 2px;
+  }
+  .bottom-cta h3 { font-size: 1.2rem; font-weight: 400; margin-bottom: 10px; color: #c9a84c; }
+  .bottom-cta p { font-family: 'Arial', sans-serif; font-size: 0.88rem; color: #ccc; line-height: 1.8; }
+  .bottom-cta .cta-email {
+    display: inline-block; margin-top: 16px;
+    background: #c9a84c; color: #1a1a2e;
+    font-family: 'Arial', sans-serif; font-weight: 700;
+    padding: 10px 28px; font-size: 0.88rem; letter-spacing: 1px;
+    text-decoration: none; border-radius: 2px;
+  }
+
+  footer {
+    background: #1a1a2e; color: #888;
+    text-align: center; padding: 24px;
+    font-family: 'Arial', sans-serif; font-size: 0.78rem;
+  }
+  footer span { color: #c9a84c; }
+
+  @media(max-width:600px) {
+    .two-col { grid-template-columns: 1fr; }
+    header h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>RUCHI SHARMA</h1>
+  <p style="font-family:'Arial',sans-serif;font-size:0.88rem;color:#e0d5b8;margin-bottom:10px;line-height:1.7;">Hindi Astrology Content Writer with 12+ years experience in horoscope, Panchang, numerology and Jyotish content for Paytm and international platforms.</p>
+  <p class="tagline">Astrology Content Writer &nbsp;|&nbsp; Hindi Horoscope &nbsp;|&nbsp; Jyotish &nbsp;|&nbsp; Spiritual Content</p>
+  <p style="font-family:'Arial',sans-serif;font-size:0.82rem;color:#e0d5b8;margin-bottom:18px;font-style:italic;">Specialized in high-volume astrology content for digital platforms (apps, telecom, subscription services)</p>
+  <div class="contact-bar">
+    <span>📞 +91-9868171722</span>
+    <span>✉ <a href="mailto:ruchi.sharmawrite@gmail.com" style="color:#c9a84c;">ruchi.sharmawrite@gmail.com</a></span>
+    <span>📍 Delhi, India</span>
+    <span>🔗 <a href="https://linkedin.com/in/ruchi-sharmaa" target="_blank" style="color:#c9a84c;">linkedin.com/in/ruchi-sharmaa</a></span>
+  </div>
+</header>
+
+<!-- TOP CTA -->
+<div class="cta-banner">
+  Hindi Astrology Content Writing रोल्स के लिए उपलब्ध &nbsp;|&nbsp; One97 Communications (Paytm) — 12+ वर्ष &nbsp;|&nbsp; संपर्क: <a href="mailto:ruchi.sharmawrite@gmail.com">ruchi.sharmawrite@gmail.com</a>
+</div>
+
+<!-- DELIVERY PROOF STRIP -->
+<div style="background:#f5f0e8;border-bottom:2px solid #e0d0a0;padding:14px 24px;display:flex;justify-content:center;flex-wrap:wrap;gap:28px;text-align:center;">
+  <div style="font-family:'Arial',sans-serif;">
+    <div style="font-size:1.3rem;font-weight:700;color:#1a1a2e;">700+</div>
+    <div style="font-size:0.72rem;color:#666;letter-spacing:0.5px;text-transform:uppercase;">Monthly Astrology Scripts</div>
+  </div>
+  <div style="font-family:'Arial',sans-serif;">
+    <div style="font-size:1.3rem;font-weight:700;color:#1a1a2e;">4 Formats</div>
+    <div style="font-size:0.72rem;color:#666;letter-spacing:0.5px;text-transform:uppercase;">Daily · Weekly · Monthly · Yearly</div>
+  </div>
+  <div style="font-family:'Arial',sans-serif;">
+    <div style="font-size:1.3rem;font-weight:700;color:#1a1a2e;">Zero</div>
+    <div style="font-size:0.72rem;color:#666;letter-spacing:0.5px;text-transform:uppercase;">Quality Rejections</div>
+  </div>
+  <div style="font-family:'Arial',sans-serif;">
+    <div style="font-size:1.3rem;font-weight:700;color:#1a1a2e;">2 Markets</div>
+    <div style="font-size:0.72rem;color:#666;letter-spacing:0.5px;text-transform:uppercase;">Nepal &amp; Zambia (International)</div>
+  </div>
+  <div style="font-family:'Arial',sans-serif;">
+    <div style="font-size:1.3rem;font-weight:700;color:#1a1a2e;">Recurring</div>
+    <div style="font-size:0.72rem;color:#666;letter-spacing:0.5px;text-transform:uppercase;">Content Cycle — Managed End-to-End</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#horoscope">राशिफल</a>
+  <a href="#panchang">पंचांग</a>
+  <a href="#gemstone">रत्न</a>
+  <a href="#numerology">अंक ज्योतिष</a>
+  <a href="#festival">त्योहार</a>
+</nav>
+
+<main>
+
+  <!-- HOROSCOPE -->
+  <section class="section" id="horoscope">
+    <p class="section-label">Sample Work</p>
+    <h2 class="section-title">राशिफल — दैनिक, साप्ताहिक, मासिक, वार्षिक</h2>
+
+    <div class="client-strip">
+      <div>
+        <div class="client-name">Ncell Nepal — Horoscope Content</div>
+        <div class="client-detail">सभी 12 राशियाँ &nbsp;·&nbsp; दैनिक / साप्ताहिक / मासिक / वार्षिक &nbsp;·&nbsp; International Client</div>
+      </div>
+      <div class="client-pills">
+        <span class="client-pill">Nepal Market</span>
+        <span class="client-pill">High Volume</span>
+        <span class="client-pill">Zero Rejections</span>
+      </div>
+    </div>
+
+    <!-- Aries full formats -->
+    <div class="card">
+      <div class="card-header">
+        <span class="icon">♈</span>
+        <div><div class="title">मेष राशि (Aries)</div><div class="sub">दैनिक · साप्ताहिक · मासिक · वार्षिक</div></div>
+      </div>
+      <div class="card-body">
+        <p class="badge">दैनिक राशिफल</p>
+        <p class="content-text">आज के दिन ग्रह, नक्षत्रों की स्थिति बहुत अनुकूल नहीं हैं। दिन भर चैलेंजेस बने रह सकते हैं। बेहतर होगा कि आप किसी चमत्कार की अपेक्षा किए बगैर अपना बेस्ट दें। चीजें निश्चित रूप से बहुत जल्दी ठीक होंगी। मिल रहीं असफलताओं को खुद को हतोत्साहित ना करने दें। समय जल्दी ही बेहतर होगा।</p>
+
+        <p class="badge" style="margin-top:14px;">साप्ताहिक राशिफल</p>
+        <p class="content-text">इस सप्ताह पारिवारिक जीवन में सुकून और अपनापन महसूस होगा। करीबी लोगों से मुलाकात होने के योग हैं, जिससे घर का माहौल हल्का-फुल्का और सकारात्मक बनेगा। संतान से जुड़ी कोई चिंता दूर होगी। हालांकि, किसी अचानक मिली जानकारी से मन थोड़ा विचलित हो सकता है — जल्दबाज़ी में प्रतिक्रिया देने से बचें। आर्थिक मामलों, खासकर निवेश को लेकर फिलहाल सतर्क रहना बेहतर रहेगा।</p>
+
+        <p class="badge" style="margin-top:14px;">मासिक भविष्यवाणी</p>
+        <p class="content-text">ये महीना चुनौतियों के बीच अवसर लेकर आएगा। आपका दृढ़ संकल्प पेंडिंग कामों को पूरा करने में मदद करेगा। प्रभावशाली लोगों का सहयोग आत्मविश्वास बढ़ाएगा। फाइनेंशियल प्लानिंग पर ध्यान देना ज़रूरी है और संपत्ति से जुड़े मामलों में प्रगति संभव है। महीने के अंत में पारिवारिक गलतफहमियों से बचें।</p>
+
+        <p class="badge" style="margin-top:14px;">वार्षिक भविष्यवाणी</p>
+        <p class="content-text">ये साल जिम्मेदारियां निभाने और लॉन्ग-टर्म ग्रोथ पर ध्यान देने का है। करियर में आगे बढ़ने के लिए मेहनत और धैर्य दोनों की ज़रूरत पड़ेगी। आर्थिक स्थिति धीरे-धीरे मजबूत होती जाएगी। सीनियर्स के साथ मतभेद हो सकते हैं, लेकिन लगातार प्रयास करने से सफलता मिलेगी। परिवार से जुड़े मामलों और सेहत पर विशेष ध्यान देना ज़रूरी रहेगा।</p>
+      </div>
+    </div>
+
+    <!-- Daily 4-category -->
+    <p style="font-family:'Arial',sans-serif;font-size:0.78rem;font-weight:700;color:#1a1a2e;letter-spacing:1.5px;text-transform:uppercase;margin:24px 0 12px;">दैनिक राशिफल — 4 श्रेणियाँ (करियर · भाग्य · प्रेम · स्वास्थ्य)</p>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header">
+          <span class="icon">💼</span>
+          <div><div class="title">करियर — वृषभ राशि</div><div class="sub">दिन 2 · जनवरी 2026</div></div>
+        </div>
+        <div class="card-body">
+          <p class="content-text">अपने साथ काम करने वाले सहयोगियों के प्रयासों को पहचानें और उनका धन्यवाद करें। उन्हें मोटिवेट करने से उनका प्रदर्शन बेहतर होगा और इससे आपकी कंपनी को भी अच्छा फायदा मिलेगा। हाल ही में नई नौकरी जॉइन करने वालों के लिए आज कुछ नए बदलाव या प्रगति के संकेत हैं।</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="icon">💼</span>
+          <div><div class="title">करियर — कन्या राशि</div><div class="sub">दिन 2 · जनवरी 2026</div></div>
+        </div>
+        <div class="card-body">
+          <p class="content-text">आज कोई सीनियर आपके काम की तारीफ़ कर सकता है। इससे आपका कॉन्फिडेंस बढ़ेगा लेकिन कुछ अतिरिक्त ज़िम्मेदारी भी मिल सकती है। ऐसा काम मिल सकता है जिसमें थोड़ा ध्यान और समझदारी चाहिए। इसे कॉन्फिडेंटली लें — यह आपका करियर आगे बढ़ा सकता है।</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="icon">🍀</span>
+          <div><div class="title">भाग्य — सिंह राशि</div><div class="sub">दिन 2 · जनवरी 2026</div></div>
+        </div>
+        <div class="card-body">
+          <p class="content-text">आज आपके लिए वाकई एक बहुत लकी डे है। अगर आप कुछ नया शुरू करने की प्लानिंग कर रहे हैं, तो आज का दिन सबसे बेहतर है। आगे बढ़ें और प्लान को अमल में लाएँ, किस्मत आपका साथ देगी। आपका लकी कलर ब्लैक है और आपका लकी नंबर 6 है।</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="icon">🍀</span>
+          <div><div class="title">भाग्य — मेष राशि</div><div class="sub">दिन 1 · मार्च 2026</div></div>
+        </div>
+        <div class="card-body">
+          <p class="content-text">आज लेडी लक आपका पूरा साथ दे रही है। मुश्किल हालात को भी आप अपने पक्ष में बदल पाएँगे। आपकी ऊर्जा और साहस नए चैलेंजेस को अपनाने के लिए तैयार रहेंगे।</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="icon">❤️</span>
+          <div><div class="title">प्रेम — मेष राशि</div><div class="sub">दिन 1 · जनवरी 2026</div></div>
+        </div>
+        <div class="card-body">
+          <p class="content-text">आज हवा में रोमांस घुला हुआ है। अपने नए प्यार के साथ आप अच्छा समय बिताएँगे। वहीं, जीवनसाथी की उम्मीदों पर खरे न उतर पाने से हल्की-फुल्की नोकझोंक हो सकती है। इसे प्यार और समझदारी से संभालें।</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="icon">🌿</span>
+          <div><div class="title">स्वास्थ्य — मेष राशि</div><div class="sub">दिन 2 · जनवरी 2026</div></div>
+        </div>
+        <div class="card-body">
+          <p class="content-text">लगातार प्रेक्टिस करना आपकी अधिकांश स्वास्थ्य दिक्कतों का सबसे असरदार जवाब है। रोज़ाना योग, रनिंग या जिम वर्कआउट को रूटीन में शामिल करेंगे, तो इसका फायदा आपको साफ दिखाई देगा।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANCHANG -->
+  <section class="section" id="panchang">
+    <p class="section-label">Sample Work</p>
+    <h2 class="section-title">पंचांग — अगस्त 2025</h2>
+
+    <div class="client-strip">
+      <div>
+        <div class="client-name">दैनिक पंचांग अलर्ट — अगस्त 2025</div>
+        <div class="client-detail">पूरे माह का कवरेज &nbsp;·&nbsp; तिथि, नक्षत्र, राहु काल, शुभ समय</div>
+      </div>
+      <div class="client-pills">
+        <span class="client-pill">Hindi</span>
+        <span class="client-pill">Daily Format</span>
+      </div>
+    </div>
+
+    <div class="panchang-entry">
+      <div class="panchang-date">01 अगस्त 2025 — शुक्रवार</div>
+      <p class="content-text">आज का दिन शुक्रवार, तिथि अष्टमी — पूर्ण रात्रि तक, पक्ष शुक्ल, सूर्योदय 05:57:05, सूर्यास्त 19:09:06, चन्द्र राशि तुला, ऋतु वर्षा, शक सम्वत 1947 विश्वावसु, विक्रम सम्वत 2082। राहु काल 10:54:06 से 12:33:06 तक। शुभ समय 12:06:42 से 12:59:30 तक।</p>
+    </div>
+    <div class="panchang-entry">
+      <div class="panchang-date">09 अगस्त 2025 — शनिवार (पूर्णिमा)</div>
+      <p class="content-text">आज का दिन शनिवार, तिथि पूर्णिमा — 13:26:42 तक, पक्ष शुक्ल, सूर्योदय 06:00:27, सूर्यास्त 19:04:09, चन्द्र राशि मकर — 26:12:03 तक, ऋतु वर्षा, शक सम्वत 1947 विश्वावसु, विक्रम सम्वत 2082। राहु काल 09:16:22 से 10:54:20 तक। शुभ समय 12:06:11 से 12:58:25 तक।</p>
+    </div>
+    <p style="font-family:'Arial',sans-serif;font-size:0.75rem;color:#999;margin-top:6px;">31 दिनों का पूरा पंचांग डेटा delivered किया गया।</p>
+  </section>
+
+  <!-- GEMSTONE -->
+  <section class="section" id="gemstone">
+    <p class="section-label">Sample Work</p>
+    <h2 class="section-title">रत्न एवं उपाय — Ncell Nepal</h2>
+
+    <div class="client-strip">
+      <div>
+        <div class="client-name">Ncell Nepal — Gemstone Scripts</div>
+        <div class="client-detail">30 रत्नों का कवरेज &nbsp;·&nbsp; Jyotish-aligned descriptions</div>
+      </div>
+      <div class="client-pills">
+        <span class="client-pill">International Client</span>
+        <span class="client-pill">Nepal Market</span>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="gem-card">
+        <div class="gem-name">गोमेद <span>(Hessonite)</span></div>
+        <p class="content-text">गोमेद रत्न राहु के अशुभ प्रभावों को शांत करता है, भय को दूर करता है और मेंटल क्लेरिटी प्रदान करता है। यह आध्यात्मिक उन्नति और आर्थिक समृद्धि में सहायक माना जाता है। एलर्जी, त्वचा रोग, साइनस की समस्या, अनिद्रा, थकान, मिर्गी, आंखों के संक्रमण और रक्तचाप संबंधी समस्याओं में यह लाभकारी होता है।</p>
+      </div>
+      <div class="gem-card">
+        <div class="gem-name">माणिक <span>(Ruby)</span></div>
+        <p class="content-text">माणिक रत्न सूर्य को बल प्रदान करता है और आत्मविश्वास, नेतृत्व क्षमता तथा इच्छाशक्ति को मजबूत करता है। यह अधिकार, पहचान और करियर में सफलता दिलाने में सहायक माना जाता है। कमजोर इम्युनिटी, थकान, कमजोर दृष्टि और आत्मविश्वास की कमी में यह उपयोगी है।</p>
+      </div>
+      <div class="gem-card">
+        <div class="gem-name">नीलम <span>(Blue Sapphire)</span></div>
+        <p class="content-text">नीलम रत्न शनि के अशुभ प्रभावों को कम करता है और जीवन में अनुशासन, एकाग्रता तथा तेज़ प्रगति लाता है। यह स्थिरता, सुरक्षा और आर्थिक विकास को बढ़ाता है। चिंता, अवसाद, पुराने दर्द और लंबे समय से चली आ रही रुकावटों में यह सहायक माना जाता है।</p>
+      </div>
+      <div class="gem-card">
+        <div class="gem-name">मोती <span>(Pearl)</span></div>
+        <p class="content-text">मोती चंद्रमा को मजबूत करता है और मन को शांति, भावनात्मक संतुलन तथा स्थिरता प्रदान करता है। यह तनाव, चिंता और मूड स्विंग्स को कम करने में सहायक है। अनिद्रा, अवसाद, क्रोध, भावनात्मक अस्थिरता और मानसिक थकान में यह लाभकारी माना जाता है।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMEROLOGY -->
+  <section class="section" id="numerology">
+    <p class="section-label">Sample Work</p>
+    <h2 class="section-title">अंक ज्योतिष — मूलांक भविष्यवाणी</h2>
+
+    <div class="client-strip">
+      <div>
+        <div class="client-name">Ncell Nepal — Numerology Scripts</div>
+        <div class="client-detail">मूलांक 1–9 &nbsp;·&nbsp; वार्षिक भविष्यवाणी</div>
+      </div>
+      <div class="client-pills">
+        <span class="client-pill">International Client</span>
+        <span class="client-pill">9 मूलांक</span>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="num-card">
+        <div class="num-header">मूलांक 1</div>
+        <p class="content-text">यह साल आपके जीवन में आगे बढ़ने, आत्मविश्वास बढ़ाने और नई शुरुआत के अवसर लेकर आएगा। कामकाज के क्षेत्र में आप नेतृत्व संभालने और अपने फैसले खुद लेने के लिए प्रेरित महसूस करेंगे। आपकी मेहनत आपको पहचान दिलाएगी, लेकिन साल के शुरुआती महीनों में धैर्य रखना ज़रूरी होगा। आर्थिक रूप से साल संतुलित रहेगा, लेकिन बिना सोचे-समझे निवेश करने से बचें।</p>
+      </div>
+      <div class="num-card">
+        <div class="num-header">मूलांक 2</div>
+        <p class="content-text">यह साल संतुलन, सामंजस्य और आपसी सहयोग पर केंद्रित रहेगा। प्रोफेशनल लाइफ में टीमवर्क और पार्टनरशिप के ज़रिए अच्छे परिणाम मिलने के योग हैं। कभी-कभी आप भावनात्मक रूप से थोड़े संवेदनशील महसूस कर सकते हैं, लेकिन धैर्य रखने से परिस्थितियाँ संभल जाएंगी। आर्थिक रूप से साल सामान्य रहेगा — पैसे उधार देने या लेने से बचना समझदारी होगी।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FESTIVAL -->
+  <section class="section" id="festival">
+    <p class="section-label">Sample Work</p>
+    <h2 class="section-title">त्योहार ज्योतिष — 2026</h2>
+
+    <div class="client-strip">
+      <div>
+        <div class="client-name">Ncell Nepal — Festival Astrology Calendar 2026</div>
+        <div class="client-detail">प्रमुख हिंदू त्योहार &nbsp;·&nbsp; ज्योतिषीय महत्व</div>
+      </div>
+      <div class="client-pills">
+        <span class="client-pill">Festival Content</span>
+        <span class="client-pill">Nepal Market</span>
+      </div>
+    </div>
+
+    <div class="festival-entry">
+      <div class="festival-name">13 जनवरी — लोहड़ी</div>
+      <p class="content-text">लोहड़ी गर्मजोशी, अपनापन और मिल-जुलकर खुशियाँ मनाने का उत्सव है। यह पर्व पुराने डर, नकारात्मक विचारों और मन पर पड़े भावनात्मक बोझ को अग्नि में अर्पित कर आगे बढ़ने का संदेश देता है। इस दिन परिवार और अपनों के साथ बिताया गया समय दिल को सुकून देता है और रिश्तों में नई ऊर्जा भरता है। दिल से व्यक्त की गई कृतज्ञता जीवन में सकारात्मकता, समृद्धि और खुशहाली को आकर्षित करती है।</p>
+    </div>
+    <div class="festival-entry">
+      <div class="festival-name">14 जनवरी — मकर संक्रांति / पोंगल</div>
+      <p class="content-text">मकर संक्रांति सूर्य के मकर राशि में प्रवेश का पर्व है, जो जीवन में अनुशासन, स्पष्टता और नई दिशा लेकर आता है। यह समय ठहराव को पीछे छोड़कर आत्मविश्वास के साथ आगे बढ़ने का संकेत देता है। करियर से जुड़े प्रयास, आर्थिक योजनाएँ और लगातार की गई मेहनत अब सकारात्मक परिणाम देने लगती हैं। मकर संक्रांति हमें सकारात्मक सोच अपनाने और अपने भीतर के आत्मबल को मजबूत करने की प्रेरणा देती है।</p>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom-cta">
+    <h3>Hindi Astrology Content Writing के लिए उपलब्ध</h3>
+    <p>
+      12+ वर्षों का अनुभव &nbsp;·&nbsp; One97 Communications (Paytm) &nbsp;·&nbsp; International Markets (Nepal, Zambia)<br>
+      Horoscope · Panchang · Numerology · Gemstone · Festival Content &nbsp;·&nbsp; Zero Rejections
+    </p>
+    <a class="cta-email" href="mailto:ruchi.sharmawrite@gmail.com">ruchi.sharmawrite@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Portfolio of <span>Ruchi Sharma</span> — Astrology Content Writer &nbsp;|&nbsp; One97 Communications (Paytm) &nbsp;|&nbsp; Delhi, India</p>
+  <p style="margin-top:6px;">+91-9868171722 &nbsp;·&nbsp; <a href="mailto:ruchi.sharmawrite@gmail.com" style="color:#c9a84c;">ruchi.sharmawrite@gmail.com</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/ruchi-sharmaa" target="_blank" style="color:#c9a84c;">linkedin.com/in/ruchi-sharmaa</a></p>
+</footer>
+
+</body>
+</html>
